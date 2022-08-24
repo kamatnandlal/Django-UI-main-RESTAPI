@@ -1,0 +1,106 @@
+{% if mes %}
+
+<script>
+  alert("{{mes}}");
+</script>
+
+{% endif %}
+
+<style>
+  table,
+  th,
+  td {
+    text-align: center;
+    border: 3px solid white;
+    border-collapse: collapse;
+    background-color: #96d4d4;
+  }
+  #po {
+    margin-left: 26%;
+    margin-top: 4%;
+  }
+  h1 {
+    text-align: center;
+    padding-top: 10px;
+    color: rgb(14, 15, 15);
+  }
+  #loo {
+    margin-left: 45%;
+  }
+  #loo {
+    width: 150px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+    border-radius: 3px;
+  }
+  #del {
+    border: none;
+    color: white;
+    background-color: #a30101;
+  }
+  #up {
+    border: none;
+    color: white;
+    background-color: #cacc63;
+  }
+  button:hover {
+    background-color: rgb(236, 136, 203);
+  }
+  #loo:hover {
+    background-color: rgb(236, 136, 203);
+  }
+  #loo,
+  button {
+    cursor: pointer;
+  }
+  #plo {
+    background-color: white;
+  }
+  .pl {
+    text-align: left;
+  }
+</style>
+
+<h1>Welcome Here</h1>
+<button type="button" id="loo" onclick="document.location='add'">Create</button>
+
+<table id="po" style="width: 800px">
+  <tr>
+    <th>Emp Id</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Technology</th>
+    <th id="plo"></th>
+    <th id="plo"></th>
+  </tr>
+  {% for i in data %}
+  <tr style="color: black" id="ui">
+    <td>{{i.Emp_Id}}</td>
+    <td>{{i.Name}}</td>
+    <td>{{i.Gender}}</td>
+    <td>{{i.Technology}}</td>
+    <td id="plo">
+      <button
+        type="button"
+        id="up"
+        onclick="document.location='update?w={{i.Emp_Id}}'"
+      >
+        Update</button
+      ><br />
+    </td>
+    <td id="plo" class="pl">
+      <button
+        type="button"
+        id="del"
+        onclick="document.location='delete?w={{i.Emp_Id}}'"
+      >
+        Delete
+      </button>
+    </td>
+  </tr>
+  {% endfor %}
+</table>

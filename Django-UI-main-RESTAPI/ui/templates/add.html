@@ -1,0 +1,88 @@
+<style>
+  #oi {
+    margin-left: 38%;
+    width: 360px;
+    height: 500px;
+    margin: auto;
+    background-color: rgba(231, 226, 226, 0.979);
+    border-radius: 3px;
+    padding-top: 1%;
+  }
+  h1 {
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  form {
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  input[type="submit"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+  }
+
+  button {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+    border-radius: 3px;
+  }
+  button:hover {
+    background-color: rgb(236, 136, 203);
+  }
+  #pl:hover {
+    background-color: rgb(236, 136, 203);
+  }
+  button,
+  #pl {
+    cursor: pointer;
+  }
+
+  #pl {
+    color: white;
+  }
+</style>
+
+<h1>Create Employee</h1>
+<div id="oi">
+  <form action="postadd" method="post">
+    {% csrf_token %} Emp Id :
+    <input type="text" name="eid" required /><br /><br />
+    Name :
+    <input type="text" name="name" required /><br /><br />
+    Gender :
+    <input type="text" name="gender" required /><br /><br />
+    Technology :
+    <input type="text" name="technology" required /><br /><br />
+    <input type="submit" id="pl" value="Submit details" /><br />
+    <br />
+
+    <button type="button" onclick="history.back()">Cancel</button>
+  </form>
+</div>
